@@ -3,28 +3,32 @@
 <head>
   <title>Text processor</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="stylesheet"
-      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/default.min.css">
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js" onload="hljs.highlightAll(); console.log('La biblioteca highlight.js se ha cargado correctamente.');"></script>   
+  <link rel="icon" href="assets/file.ico">
 </head>
 <body>
   <h1>Procesar archivo de texto</h1>
-
+<div class="center">
+<div class="multicolor">
   <div id="file-selector-container">
     <div id="file-selector" onclick="document.getElementById('txt-file').click();">
       &nbsp;&nbsp; Seleccionar archivo &nbsp;&nbsp;
       <input type="file" id="txt-file" accept=".txt,.js,.md" onchange="updateSelectedFile()">
     </div>
+    </div>
     <div id="selected-file"></div>
   </div>
-
+  </div>
   <div id="process-btn-container">
+    <div id="loader-container" class="hidden">
+      <div id="loader"></div>
+    </div>
     <button type="button" id="process-btn" class="disabled" onclick="processFile()">Procesar archivo</button>
   </div>
 
+
   <div id="result-container">
     <h2 id="result-container-header">Resultados:</h2>
-    <pre><code id="result"></code></pre>
+<pre><code id="result" style="text-align: center;">Esperando a procesar archivo...</code></pre>
   </div>
 
   <script src="script.js"></script>

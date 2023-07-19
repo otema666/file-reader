@@ -15,6 +15,30 @@ function updateSelectedFile() {
   selectedFile.innerHTML = `Archivo: <span style="color:#34abeb">'<strong>${fileName}</strong>'</span>; tipo: <span style="color: #61C398"><em>${fileType}</em></span>.`;
 }
 
+function startLoadingAnimation() {
+  const processBtn = document.getElementById("process-btn");
+
+  // Ocultar el botón y mostrar la barra de carga
+  processBtn.classList.add("hidden");
+  document.getElementById("loader-container").classList.remove("hidden");
+
+  // Iniciar la animación de la barra de carga
+  document.getElementById("loader").style.animation = "loading 1.8s ease-in-out forwards, change-color 1.8s ease-in-out forwards";
+}
+
+function stopLoadingAnimation() {
+  const processBtn = document.getElementById("process-btn");
+
+  // Mostrar el botón y ocultar la barra de carga
+  processBtn.classList.remove("hidden");
+  document.getElementById("loader-container").classList.add("hidden");
+
+  // Reiniciar la animación de la barra de carga
+  document.getElementById("loader").style.animation = "none";
+  document.getElementById("loader").offsetHeight;
+  document.getElementById("loader").style.animation = "loading 1.8s ease-in-out forwards";
+}
+
 function processFile() {
   const fileInput = document.getElementById("txt-file");
   const file = fileInput.files[0];
@@ -44,6 +68,14 @@ fileInput.addEventListener("change", function() {
     processBtn.classList.add("enabled");
     processBtn.disabled = false;
     updateSelectedFile();
+
+    // Comenzar la animación de la barra de carga
+    startLoadingAnimation();
+
+    // Después de 3 segundos, detener la animación de la barra de carga
+    setTimeout(function() {
+      stopLoadingAnimation();
+    }, 1800);
   } else {
     processBtn.classList.remove("enabled");
     processBtn.classList.add("disabled");
