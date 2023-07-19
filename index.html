@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text processor</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/default.min.css">
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js" onload="hljs.highlightAll(); console.log('La biblioteca highlight.js se ha cargado correctamente.');"></script>   
+</head>
+<body>
+  <h1>Procesar archivo de texto</h1>
+
+  <div id="file-selector-container">
+    <div id="file-selector" onclick="document.getElementById('txt-file').click();">
+      &nbsp;Seleccionar archivo
+      <input type="file" id="txt-file" accept=".txt,.js" onchange="updateSelectedFile()">
+    </div>
+    <div id="selected-file"></div>
+  </div>
+
+  <div id="process-btn-container">
+    <button type="button" id="process-btn" class="disabled" onclick="processFile()">Procesar archivo</button>
+  </div>
+
+  <div id="result-container">
+    <h2 id="result-container-header">Resultados:</h2>
+    <pre><code id="result"></code></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
