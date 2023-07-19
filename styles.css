@@ -34,13 +34,26 @@ h1 {
   content: '';
   position: absolute;
   top: 50%;
-  left: 5px;
+  left: 8px;
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  background-image: url('https://img.icons8.com/material-outlined/24/ffffff/upload--v1.png');
+  background-image: url('assets/upload.png');
   background-size: cover;
 }
+
+#file-selector::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 178px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url('assets/upload.png');
+  background-size: cover;
+}
+
 
 #txt-file {
   position: absolute;

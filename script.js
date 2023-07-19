@@ -1,7 +1,18 @@
 function updateSelectedFile() {
   const fileInput = document.getElementById('txt-file');
   const selectedFile = document.getElementById('selected-file');
-  selectedFile.innerHTML = `El archivo seleccionado se llama: ${fileInput.files[0].name}`;
+  const fileName = fileInput.files[0].name;
+  const fileExtension = fileName.split('.').pop();
+
+  const fileTypeNames = { // Objeto que asocia extensiones de archivo con nombres de tipo correspondientes
+    js: 'javascript',
+    txt: 'texto',
+    md: 'markdown'
+  };
+
+  const fileType = fileTypeNames[fileExtension] || fileExtension; // Buscamos la extensión del archivo en el objeto y mostramos el nombre de tipo correspondiente, o la extensión si no se encuentra en el objeto
+
+  selectedFile.innerHTML = `Archivo: <span style="color:#34abeb">'<strong>${fileName}</strong>'</span>; tipo: <span style="color: #61C398"><em>${fileType}</em></span>.`;
 }
 
 function processFile() {
