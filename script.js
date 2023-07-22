@@ -47,13 +47,20 @@ function processFile() {
     alert("⚠️ Debes seleccionar un archivo para poder procesarlo. ⚠️");
     return;
   }
-
+  const caja1 = document.getElementById("caja1");
+  const caja_result = document.getElementById("result-container");
+  const restart = document.getElementById("reset_button");
   const reader = new FileReader();
 
   reader.onload = function (event) {
+    caja_result.classList.remove("hidden");
+    caja1.classList.add("hidden");
+    restart.classList.remove("hidden");
+
+
     const resultElement = document.getElementById("result");
     const lines = event.target.result.split("\n");
-    resultElement.innerHTML = lines.map((line, index) => `<span class="line-number">Línea ${index + 1}:</span> ${line}`).join("<br>");
+    resultElement.innerHTML = lines.map((line, index) => `<span class="line-number">Línea ${index + 1}:</span> <span class="result"> ${line}</span>`).join("<br>");
   };
 
   reader.readAsText(file);
@@ -82,6 +89,12 @@ fileInput.addEventListener("change", function() {
     processBtn.disabled = true;
   }
 });
+
+function reset() {
+   if (confirm("¿Estás seguro de que deseas recargar la página?")) {
+    location.reload();
+  }
+}
 
 window.addEventListener("load", function() {
   fileInput.value = null;

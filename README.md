@@ -1,3 +1,2 @@
-xaxaxaxaxxaxaxxaxxaxxxxaxaxxaxxaxxaxaxaxxaxax
-asdasd
+file reader by otema NULL NULL
 

@@ -2,7 +2,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: #1f1f1f;
   color: #ffffff;
-  
 }
 
 h1 {
@@ -11,18 +10,38 @@ h1 {
   border-radius: 15px;
   padding: 12px;
 }
-.center {
-  width: 500px; /* Definir una anchura para el contenedor */
-  margin: 0 41%; /* Centrar el contenedor en la pantalla */
+
+#reset_button {
+  position: absolute;
+  top: 21px;
+  left: 10px;
+  background-color: #3b4cca;  /* Cambia este color al que prefieras */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 13px;
 }
+
+#reset_button:hover {
+  background-color:  #2c3e9c;  /* Cambia este color al que prefieras */
+}
+
+.contenedor {
+  text-align: center;
+}
+
 .multicolor {
   padding: 5px;
-  border-width: 3px;
+  border-width: 1.4px;
   display: inline-block;
   border-style: solid;
-  border-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #40ff00, #00ffbf, #0080ff, #8000ff, #bf00ff, #ff00ff, #ff0080, #ff0000, #ff8000) 1 1; /* Aplicar el gradiente de color y el estilo de borde */
-  margin-left: auto;
-  margin-right: auto;
+  border-image: linear-gradient(to right, #ff0000, #ff8000, #ffff00, #40ff00, #00ffbf, #0080ff, #8000ff, #bf00ff, #ff00ff, #ff0080, #ff0000, #ff8000) 1 1;
 }
 
 #file-selector-container {
@@ -113,7 +132,7 @@ h1 {
   box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
   border-radius: 10px;
   padding: 20px;
-  background-color: #2c2c2c;
+  background-color: #2c2c2c;  
 }
 
 #result-container-header{
@@ -121,21 +140,36 @@ h1 {
   border-radius: 15px;
   padding: 12px;
   text-align: center;
+  
+  
 }
 
 #result {
   font-size: 18px;
   text-align: left;
   padding: 6px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  
+  
+  display: inline-block;
+  background-color: #1d1d1d;
+  color: #dcdcdc;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px 4px rgba(0,0,70,0.75);
 }
-
 .line-number {
   font-family: Arial, sans-serif;
   font-size: 9px;
-  color: #999999;
-  left: -10px;
-  position: relative;
+  display: inline-block;
+  width: 50px;
+  text-align: left;
+  padding-left: 10px;
+  color: #3565b5;
+  text-indent: -10px;
 }
+
+
 
 #loader-container {
   width: 23%;
